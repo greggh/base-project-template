@@ -8,11 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Initial project structure
 - Documentation templates
 - GitHub configuration files
 
 ## [0.1.0] - YYYY-MM-DD
+
 - Initial release
 
 [Unreleased]: https://github.com/username/project/compare/v0.1.0...HEAD
