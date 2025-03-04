@@ -121,6 +121,32 @@ Follow [Semantic Versioning 2.0.0](https://semver.org/) with MAJOR.MINOR.PATCH f
 6. Pull request process
 7. Review expectations
 
+### Acknowledgements Section
+
+The Acknowledgements section should be included in the README.md to:
+
+1. **Credit Dependencies** - Recognize key libraries, frameworks, and tools your project relies on
+2. **Acknowledge Standards** - Reference standards you follow (Semantic Versioning, Contributor Covenant, etc.)
+3. **Recognize Contributors** - Highlight significant contributors or inspirations
+4. **Attribute Resources** - Credit design assets, documentation templates, or other resources used
+5. **Format Recommendations**:
+   - Include direct links to acknowledged projects
+   - Organize by categories for larger projects
+   - Briefly explain how each dependency or standard is used
+   - For tools and infrastructure, mention specific benefits they provide
+
+Example Acknowledgements section:
+```markdown
+## Acknowledgements
+
+- [Framework X](https://example.com) - The core framework this project builds upon
+- [Library Y](https://example.com) - Used for handling complex data processing
+- [Semantic Versioning](https://semver.org/) - Versioning standard used in this project
+- [Contributor Covenant](https://www.contributor-covenant.org/) - Code of Conduct standard
+- [Tool Z](https://example.com) - Build and optimization tooling
+- Project inspired by [Original Concept](https://example.com) by [Original Author]
+```
+
 ## Quality Assurance
 
 ### Linting and Formatting
