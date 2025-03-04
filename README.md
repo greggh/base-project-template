@@ -1,6 +1,21 @@
-# Project Template Repository
+# Base Project Template
 
-A comprehensive template repository with best practices for modern GitHub projects. Fork this repository to quickly set up new projects with standardized community guidelines, documentation, and GitHub configurations.
+[![GitHub License](https://img.shields.io/github/license/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/issues)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/commits/main)
+[![CI](https://img.shields.io/github/actions/workflow/status/greggh/base-project-template/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/greggh/base-project-template/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/badge/Version-0.1.0-blue?style=flat-square)](https://github.com/greggh/base-project-template/releases/tag/v0.1.0)
+[![Discussions](https://img.shields.io/github/discussions/greggh/base-project-template?style=flat-square&logo=github)](https://github.com/greggh/base-project-template/discussions)
+
+*A comprehensive template repository with best practices for modern GitHub projects. Fork this repository to quickly set up new projects with standardized community guidelines, documentation, and GitHub configurations.*
+
+[Features](#features) •
+[Getting Started](#getting-started) •
+[Customization](#customization) •
+[Documentation](#documentation) •
+[Contributing](#contributing) •
+[License](#license)
 
 ## Features
 
