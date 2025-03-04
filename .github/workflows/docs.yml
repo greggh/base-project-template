@@ -1,0 +1,43 @@
+name: Documentation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - '**.md'
+  workflow_dispatch:
+
+jobs:
+  check-docs:
+    name: Check Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Check for broken links
+        run: |
+          pip install linkchecker
+          find . -name "*.md" -exec sh -c 'grep -o "\[.*\]([^)]*)" "{}" | grep -v "#" | sed "s/.*(\(.*\))/\1/" | grep "http" | xargs -I % linkchecker %' \;
+      
+      - name: Validate documentation structure
+        run: |
+          if [ ! -d "docs" ]; then
+            echo "::error::Documentation directory 'docs' is missing"
+            exit 1
+          fi
+          
+          # Check README.md, CHANGELOG.md, etc.
+          for docfile in README.md CHANGELOG.md CONTRIBUTING.md; do
+            if [ ! -f "$docfile" ]; then
+              echo "::warning::Recommended documentation file $docfile is missing"
+            fi
+          done
+          
+          echo "✅ Documentation structure validated"
