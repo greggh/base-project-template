@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    name: Validate Template
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Validate directory structure
+        run: |
+          # Check for required directories
+          for dir in .github docs scripts; do
+            if [ ! -d "$dir" ]; then
+              echo "::error::Required directory $dir is missing"
+              exit 1
+            fi
+          done
+          echo "✅ All required directories present"
+      
+      - name: Validate community health files
+        run: |
+          # Check for required community health files
+          for file in CODE_OF_CONDUCT.md CONTRIBUTING.md LICENSE SECURITY.md SUPPORT.md; do
+            if [ ! -f "$file" ]; then
+              echo "::error::Required file $file is missing"
+              exit 1
+            fi
+          done
+          echo "✅ All required community health files present"
+      
+      - name: Validate GitHub templates
+        run: |
+          # Check for issue and PR templates
+          if [ ! -d ".github/ISSUE_TEMPLATE" ]; then
+            echo "::error::Issue template directory missing"
+            exit 1
+          fi
+          
+          if [ ! -f ".github/PULL_REQUEST_TEMPLATE.md" ]; then
+            echo "::error::Pull request template missing"
+            exit 1
+          fi
+          echo "✅ GitHub templates validated"
+
+  markdown-lint:
+    name: Lint Markdown Files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install markdownlint
+        run: npm install -g markdownlint-cli
+      
+      - name: Lint Markdown files
+        run: markdownlint "**/*.md" --ignore node_modules
