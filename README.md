@@ -1,6 +1,21 @@
-# Project Template Repository
+# Base Project Template
 
-A comprehensive template repository with best practices for modern GitHub projects. Fork this repository to quickly set up new projects with standardized community guidelines, documentation, and GitHub configurations.
+[![GitHub License](https://img.shields.io/github/license/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/issues)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/commits/main)
+[![CI](https://img.shields.io/github/actions/workflow/status/greggh/base-project-template/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/greggh/base-project-template/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/badge/Version-0.1.0-blue?style=flat-square)](https://github.com/greggh/base-project-template/releases/tag/v0.1.0)
+[![Discussions](https://img.shields.io/github/discussions/greggh/base-project-template?style=flat-square&logo=github)](https://github.com/greggh/base-project-template/discussions)
+
+*A comprehensive template repository with best practices for modern GitHub projects. Fork this repository to quickly set up new projects with standardized community guidelines, documentation, and GitHub configurations.*
+
+[Features](#features) •
+[Getting Started](#getting-started) •
+[What's Included](#whats-included) •
+[Customization](#customization) •
+[License](#license) •
+[Acknowledgments](#acknowledgments)
 
 ## Features
 
@@ -41,7 +56,7 @@ A comprehensive template repository with best practices for modern GitHub projec
 - `.github/ISSUE_TEMPLATE/` - Templates for bug reports and feature requests
 - `.github/PULL_REQUEST_TEMPLATE.md` - Pull request template
 - `.github/FUNDING.yml` - Funding links configuration
-- `.github/workflows/` - Example CI workflows for common languages
+- `.github/workflows/` - CI/CD workflows for validation and releases
 
 ### Project Structure
 
@@ -63,11 +78,20 @@ This template is designed to be customized for your specific project. You should
 
 ## License
 
-This template is available under the MIT License.
+This template is available under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
-- [Keep a Changelog](https://keepachangelog.com/)
-- [Contributor Covenant](https://www.contributor-covenant.org/)
-- [Semantic Versioning](https://semver.org/)
-- [GitHub Community Standards](https://opensource.guide/)
+- [Keep a Changelog](https://keepachangelog.com/) - Guidelines for maintaining a changelog
+- [Contributor Covenant](https://www.contributor-covenant.org/) - Code of conduct framework
+- [Semantic Versioning](https://semver.org/) - Versioning guidelines
+- [GitHub Community Standards](https://opensource.guide/) - Open source community guidelines
+
+## Discussions
+
+Have questions or ideas? Join the conversation in [GitHub Discussions](https://github.com/greggh/base-project-template/discussions).
+
+- **Questions**: For help with using the template
+- **Ideas**: Suggest new features or improvements
+- **Show and Tell**: Share how you're using this template
+- **General**: For any other topics related to this template
