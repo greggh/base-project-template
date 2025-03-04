@@ -4,6 +4,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/issues)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/commits/main)
+[![CI](https://img.shields.io/badge/CI-example-informational?style=flat-square&logo=github)](https://github.com/greggh/base-project-template/blob/main/.github/workflows/ci.yml.example)
 [![Version](https://img.shields.io/badge/Version-0.1.0-blue?style=flat-square)](https://github.com/greggh/base-project-template/releases/tag/v0.1.0)
 [![Discussions](https://img.shields.io/github/discussions/greggh/base-project-template?style=flat-square&logo=github)](https://github.com/greggh/base-project-template/discussions)
 
