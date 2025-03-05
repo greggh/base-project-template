@@ -1,0 +1,21 @@
+#!/bin/bash
+# Pre-commit hook to ensure version consistency
+
+set -e
+
+# Get the project name from the directory
+PROJECT_NAME=$(basename "$PWD" | sed 's/-/_/g')
+
+# Check if version_check.lua exists
+if [ -f "./scripts/version_check.lua" ]; then
+  echo "Checking version consistency..."
+  # Run version check
+  if ! lua ./scripts/version_check.lua "$PROJECT_NAME"; then
+    echo "❌ Version check failed! Please fix the version inconsistencies."
+    echo "   Run 'lua ./scripts/version_check.lua $PROJECT_NAME' to see the issues."
+    exit 1
+  fi
+  echo "✅ Version check passed."
+fi
+
+# Continue with other pre-commit checks (if any)

@@ -28,8 +28,52 @@ Please see [DEVELOPMENT.md](DEVELOPMENT.md) for details on setting up your devel
 
 1. Update the README.md or relevant documentation with details of changes
 2. Update the CHANGELOG.md with your changes under the "Unreleased" section
-3. The PR should work on all supported platforms and pass all tests
-4. Your PR needs approval from at least one maintainer before it can be merged
+3. Ensure version consistency across the project (see [Versioning](#versioning) below)
+4. The PR should work on all supported platforms and pass all tests
+5. Your PR needs approval from at least one maintainer before it can be merged
+
+## Versioning
+
+This project follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH).
+
+### Version Management
+
+1. **Single Source of Truth**: The canonical version is stored in `lua/[project-name]/version.lua`.
+2. **Consistency**: All references to the version must be consistent across:
+   - `README.md`
+   - `CHANGELOG.md`
+   - Code files (`init.lua`, `main.lua`, etc.)
+   - Package files (`.rockspec`, `package.json`, etc.)
+
+### Version Checking
+
+Before committing changes, verify version consistency by running:
+
+```bash
+lua scripts/version_check.lua
+```
+
+This check is also performed automatically in the pre-commit hook.
+
+### Version Bumping
+
+To update the project version, use the version bump script:
+
+```bash
+lua scripts/version_bump.lua NEW_VERSION
+```
+
+For example:
+```bash
+lua scripts/version_bump.lua 1.2.3
+```
+
+This will:
+1. Update the version in all relevant files
+2. Add a new version section to the CHANGELOG.md
+3. Update comparison links in the CHANGELOG.md
+
+After running the script, review the changes, commit them, and create a corresponding git tag.
 
 ## Coding Standards
 
