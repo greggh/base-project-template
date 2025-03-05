@@ -62,7 +62,14 @@ sed -i "s/username\/project-name/$GITHUB_USERNAME\/$PROJECT_NAME/g" SUPPORT.md
 echo "Setting up version management..."
 mkdir -p "lua/$LUA_MODULE_NAME"
 cp templates/version.lua "lua/$LUA_MODULE_NAME/version.lua"
-sed -i "s/0\.1\.0/$PROJECT_VERSION/g" "lua/$LUA_MODULE_NAME/version.lua"
+
+# Extract version components
+IFS='.' read -r MAJOR MINOR PATCH <<< "$PROJECT_VERSION"
+
+# Update version components in version.lua
+sed -i "s/M.major = 0/M.major = $MAJOR/g" "lua/$LUA_MODULE_NAME/version.lua"
+sed -i "s/M.minor = 1/M.minor = $MINOR/g" "lua/$LUA_MODULE_NAME/version.lua"
+sed -i "s/M.patch = 0/M.patch = $PATCH/g" "lua/$LUA_MODULE_NAME/version.lua"
 
 # Set up pre-commit hooks
 echo "Setting up git hooks..."

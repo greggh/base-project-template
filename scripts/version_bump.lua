@@ -7,7 +7,13 @@ local config = {
   -- Known files that should contain version information
   version_files = {
     -- Main source of truth
-    { path = "lua/%s/version.lua", pattern = "return \"([%d%.]+)\"", replacement = "return \"%s\"" },
+    { path = "lua/%s/version.lua", pattern = "M.major = (%d+).-M.minor = (%d+).-M.patch = (%d+)", 
+      replacement = function(new_version)
+        local major, minor, patch = new_version:match("(%d+)%.(%d+)%.(%d+)")
+        return string.format("M.major = %s\nM.minor = %s\nM.patch = %s", major, minor, patch)
+      end,
+      complex = true
+    },
     -- Documentation files
     { path = "README.md", pattern = "Version: v([%d%.]+)", replacement = "Version: v%s" },
     { path = "CHANGELOG.md", pattern = "## %[Unreleased%]", 
@@ -74,6 +80,14 @@ local function extract_version(path, pattern)
     return nil, "Could not read "..path..": "..tostring(err)
   end
   
+  -- Handle patterns that return multiple captures (like the structured version.lua)
+  local major, minor, patch = content:match(pattern)
+  if major and minor and patch then
+    -- This is a structured version with multiple components
+    return major.."."..minor.."."..patch
+  end
+  
+  -- Regular single capture pattern
   local version = content:match(pattern)
   return version
 end
@@ -167,9 +181,23 @@ local function update_version(file_config, new_version)
       return true  -- Not a fatal error
     end
     
-    local replacement = string.format(file_config.replacement, new_version)
-    local pattern_escaped = file_config.pattern:gsub("%(", "%%("):gsub("%)", "%%)"):gsub("%%", "%%%%")
-    local new_content = content:gsub(pattern_escaped, replacement)
+    local new_content
+    if file_config.complex then
+      -- Use a function-based replacement for complex patterns
+      if type(file_config.replacement) == "function" then
+        -- For structured version files like version.lua
+        local replacement_text = file_config.replacement(new_version)
+        new_content = content:gsub(file_config.pattern, replacement_text)
+      else
+        print("❌ Complex replacement specified but no function provided for: " .. path)
+        return false
+      end
+    else
+      -- Simple string replacement
+      local replacement = string.format(file_config.replacement, new_version)
+      local pattern_escaped = file_config.pattern:gsub("%(", "%%("):gsub("%)", "%%)"):gsub("%%", "%%%%")
+      new_content = content:gsub(pattern_escaped, replacement)
+    end
     
     if new_content == content then
       print("⚠️ No changes made to: " .. path)

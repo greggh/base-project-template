@@ -6,4 +6,16 @@
 
 -- Should follow semantic versioning: MAJOR.MINOR.PATCH
 -- See https://semver.org/ for more details
-return "0.1.0"
+
+local M = {}
+
+-- Individual version components
+M.major = 0
+M.minor = 1
+M.patch = 0
+
+-- Combined semantic version
+M.string = string.format("%d.%d.%d", M.major, M.minor, M.patch)
+
+-- For compatibility with direct require
+return M.string
