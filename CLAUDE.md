@@ -1,43 +1,30 @@
-# Base Project Template Guide
+# Project: Base Project Template
 
-## Version Management System
+## Overview
+Base Project Template serves as the foundation template for all new projects in the Neovim ecosystem. It provides standardized GitHub configurations, workflow templates, documentation structures, and development best practices that form the base layer for more specialized project templates.
 
-### Useful Commands
-- Check version consistency: `lua scripts/version_check.lua`
-- Bump version: `lua scripts/version_bump.lua 1.2.3`
-- Install git hooks: `./scripts/install_hooks.sh`
+## Essential Commands
+- Check Documentation: `env -C /home/gregg/Projects/base-project-repo markdownlint *.md`
+- Fix Documentation: `env -C /home/gregg/Projects/base-project-repo markdownlint --fix *.md`
+- Version Check: `env -C /home/gregg/Projects/base-project-repo lua scripts/version_check.lua`
+- Version Bump: `env -C /home/gregg/Projects/base-project-repo lua scripts/version_bump.lua patch`
+- Setup Hooks: `env -C /home/gregg/Projects/base-project-repo ./scripts/setup-hooks.sh`
 
-### Key Files
-- `lua/project-name/version.lua` - Single source of truth for version
-- `scripts/version_check.lua` - Verifies version consistency across files
-- `scripts/version_bump.lua` - Updates version across all project files
-- `.githooks/pre-commit` - Git hook for version validation
-- `templates/version.lua` - Template for the version file
+## Project Structure
+- `/.github`: GitHub workflows and templates
+- `/docs`: Documentation structure
+- `/scripts`: Utility scripts for development
+- `/.githooks`: Git hooks for pre-commit validation
+- `/templates`: Template files for various purposes
+- `CHANGELOG.md`, `README.md`, etc.: Standard documentation files
 
-### Versioning Process
-1. Ensure all changes are in the `## [Unreleased]` section of CHANGELOG.md
-2. Run version bump script: `lua scripts/version_bump.lua NEW_VERSION`
-3. Review changes, especially in CHANGELOG.md
-4. Commit with message: `git commit -m "Release: Version NEW_VERSION"`
-5. Create a tag: `git tag -a vNEW_VERSION -m "Version NEW_VERSION"`
-6. Push changes: `git push && git push --tags`
+## Current Focus
+- Fixing remaining YAML linting issues in workflow files
+- Creating standardized workflow file templates
+- Adding hooks-util as git submodule
+- Improving documentation structure and style
+- Enhancing version management scripts
 
-## Project Setup
-
-### Initial Setup Commands
-- Run setup script: `./scripts/setup.sh`
-- Apply git hooks: `./scripts/install_hooks.sh`
-
-### Project Files
-- `README.md` - Main project documentation
-- `CHANGELOG.md` - Project history following Keep a Changelog format
-- `CONTRIBUTING.md` - Guidelines for contributors including versioning
-- `CODE_OF_CONDUCT.md` - Project code of conduct
-- `LICENSE` - Project license
-- `SECURITY.md` - Security policy
-- `SUPPORT.md` - How to get support
-
-### GitHub Configuration
-- `.github/workflows/` - CI, Documentation, and Release workflows
-- `.github/ISSUE_TEMPLATE/` - Templates for bug reports and feature requests
-- `.github/PULL_REQUEST_TEMPLATE.md` - Template for pull requests
+## Documentation Links
+- Tasks: `/home/gregg/Projects/docs-projects/neovim-ecosystem-docs/tasks/base-project-tasks.md`
+- Project Status: `/home/gregg/Projects/docs-projects/neovim-ecosystem-docs/project-status.md`
