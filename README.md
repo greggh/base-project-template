@@ -1,3 +1,5 @@
+<div align="center">
+
 # Base Project Template
 
 [![GitHub License](https://img.shields.io/github/license/greggh/base-project-template?style=flat-square)](https://github.com/greggh/base-project-template/blob/main/LICENSE)
@@ -14,16 +16,19 @@
 [Getting Started](#getting-started) •
 [What's Included](#whats-included) •
 [Customization](#customization) •
+[Contributing](#contributing) •
 [License](#license) •
-[Acknowledgments](#acknowledgments)
+[Discussions](https://github.com/greggh/base-project-template/discussions)
+
+</div>
 
 ## Features
 
-- **Community Guidelines** – Code of conduct, contributing guide, and support information
-- **Security Policy** – Vulnerability reporting and security expectations
-- **GitHub Configurations** – Issue/PR templates, funding information, and workflow examples
-- **Documentation Templates** – Readme, changelog, development guide, and roadmap
-- **Project Structure** – Common directories and file templates
+- 👥 **Community Guidelines** - Code of conduct, contributing guide, and support information
+- 🔒 **Security Policy** - Vulnerability reporting and security expectations
+- ⚙️ **GitHub Configurations** - Issue/PR templates, funding information, and workflow examples
+- 📚 **Documentation Templates** - Readme, changelog, development guide, and roadmap
+- 📁 **Project Structure** - Common directories and file templates
 
 ## Getting Started
 
@@ -36,6 +41,57 @@
 4. Update the documentation files with your project-specific information
 5. Set up your development environment based on the development guide
 6. Start developing!
+
+## Installation
+
+This template can be used with any type of project. Depending on the type of project you're creating, you might use one of these installation approaches:
+
+### JavaScript/TypeScript Projects
+
+```bash
+# Using npm
+npm install your-project-name
+
+# Using yarn
+yarn add your-project-name
+
+# Using pnpm
+pnpm add your-project-name
+```
+
+### Python Projects
+
+```bash
+# Using pip
+pip install your-project-name
+
+# Using poetry
+poetry add your-project-name
+```
+
+### Docker Projects
+
+```bash
+# Pull the image
+docker pull username/project-name:latest
+
+# Run the container
+docker run -d username/project-name
+```
+
+## Usage
+
+After setting up your project from this template, you can customize it for your specific needs:
+
+```bash
+# Example: Adding a new feature in JavaScript project
+npm run dev
+
+# Example: Running tests
+npm test
+```
+
+For detailed usage instructions specific to your project, replace this section with appropriate documentation.
 
 ## What's Included
 
@@ -76,6 +132,25 @@ This template is designed to be customized for your specific project. You should
 4. Remove any unnecessary components
 5. Add language-specific files and directories
 
+## Contributing
+
+Contributions to improve this template are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request
+
+Please make sure to:
+- Update documentation as needed
+- Follow the existing code style
+- Respect the purpose of the template
+
+## Discussions
+
+Have questions or ideas? Join the conversation in [GitHub Discussions](https://github.com/greggh/base-project-template/discussions).
+
 ## License
 
 This template is available under the MIT License. See the [LICENSE](LICENSE) file for details.
@@ -87,11 +162,8 @@ This template is available under the MIT License. See the [LICENSE](LICENSE) fil
 - [Semantic Versioning](https://semver.org/) - Versioning guidelines
 - [GitHub Community Standards](https://opensource.guide/) - Open source community guidelines
 
-## Discussions
+---
 
-Have questions or ideas? Join the conversation in [GitHub Discussions](https://github.com/greggh/base-project-template/discussions).
-
-- **Questions**: For help with using the template
-- **Ideas**: Suggest new features or improvements
-- **Show and Tell**: Share how you're using this template
-- **General**: For any other topics related to this template
+<div align="center">
+  <p>Made with ❤️ by <a href="https://github.com/greggh">greggh</a></p>
+</div>
